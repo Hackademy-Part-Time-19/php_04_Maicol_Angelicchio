@@ -2,7 +2,7 @@
 
 class Vertebrates{
     public function __construct(){
-
+        $this->print();
     }
     protected function print(){
         echo "Sono un animale vertebrato". PHP_EOL;
@@ -10,8 +10,8 @@ class Vertebrates{
 }
 
 class WarmBlooded extends Vertebrates{
-    public function __contruct(){
-
+    public function __construct(){
+        parent::__construct();
     }
     protected function print(){
         parent::print();
@@ -20,8 +20,8 @@ class WarmBlooded extends Vertebrates{
 }
 
 class ColdBlooded extends Vertebrates{
-    public function __contruct(){
-
+    public function __construct(){
+        parent::__construct();
     }
     protected function print(){
         parent::print();
@@ -31,7 +31,7 @@ class ColdBlooded extends Vertebrates{
 
 class Mammals extends WarmBlooded{
     public function __construct(){
-
+        parent::__construct();
     }
     protected function print(){
         parent::print();
@@ -41,7 +41,7 @@ class Mammals extends WarmBlooded{
 
 class Birds extends WarmBlooded{
     public function __construct(){
-
+        parent::__construct();
     }
     protected function print(){
         parent::print();
@@ -51,7 +51,7 @@ class Birds extends WarmBlooded{
 
 class Fish extends ColdBlooded{
     public function __construct(){
-
+        parent::__construct();
     }
     protected function print(){
         parent::print();
@@ -61,7 +61,7 @@ class Fish extends ColdBlooded{
 
 class Reptiles extends ColdBlooded{
     public function __construct(){
-
+        parent::__construct();
     }
     protected function print(){
         parent::print();
@@ -71,10 +71,12 @@ class Reptiles extends ColdBlooded{
 
 class Amphibians extends ColdBlooded{
     public function __construct(){
-
+        parent::__construct();
     }
     protected function print(){
         parent::print();
         echo "Sono un anfibio".PHP_EOL;
     }
 }
+
+$magikarp = new Fish();
