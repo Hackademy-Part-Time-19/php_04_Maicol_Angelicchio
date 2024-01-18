@@ -1,5 +1,5 @@
 <?php
-class Continet{
+class Continent{
     public $nameContinent;
     public function __construct($_nameContinent){
         $this->nameContinent = $_nameContinent;
@@ -9,7 +9,7 @@ class Continet{
 class Country extends Continent{
     public $nameCountry;
     public function __construct($_nameContinent, $_nameCountry){
-        parent::__construct($nameContinent);
+        parent::__construct($_nameContinent);
         $this->nameCountry = $_nameCountry;
     }
 }
@@ -44,4 +44,12 @@ class Street extends City{
         parent::__construct($_nameContinent, $_nameCountry, $_nameRegion, $_nameProvince, $_nameCity);
         $this->nameStreet = $_nameStreet;
     }
+
+    public function getMyCurrentLocation(){
+        return "Mi trovo in $this->nameContinent, $this->nameCountry, $this->nameRegion, $this->nameProvince, $this->nameCity, $this->nameStreet";
+    }
+
 }
+
+$myLocation = new Street("Europa", "Italia", "Puglia", "BA", "Bari", "Strada San Giorgio Martire 2D");
+echo $myLocation->getMyCurrentLocation();
